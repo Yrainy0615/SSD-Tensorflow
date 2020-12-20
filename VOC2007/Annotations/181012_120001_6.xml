@@ -1,0 +1,26 @@
+<annotation>
+	<folder>split</folder>
+	<filename>181012_120001_6.jpg</filename>
+	<path>/home/yang/Projects/cs25/datasets/test/split/181012_120001_6.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>300</width>
+		<height>300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cow</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>66</xmin>
+			<ymin>256</ymin>
+			<xmax>107</xmax>
+			<ymax>300</ymax>
+		</bndbox>
+	</object>
+</annotation>
