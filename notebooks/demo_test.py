@@ -290,7 +290,7 @@ def process_image(img, select_threshold=0.6, nms_threshold=.01, net_shape=(300, 
 path = '../demo/'
 image_names = sorted(os.listdir(path))
 # 文件夹中的第几张图，-1代表最后一张
-img = mpimg.imread(path + image_names[-1])
+img = mpimg.imread(path + image_names[-2])
 rclasses, rscores, rbboxes = process_image(img)
 
 # visualization.bboxes_draw_on_img(img, rclasses, rscores, rbboxes, visualization.colors_plasma)
