@@ -221,8 +221,8 @@ with slim.arg_scope(ssd_net.arg_scope(data_format=data_format)):
     predictions, localisations, _, _ = ssd_net.net(image_4d, is_training=False, reuse=reuse)
 
 # 导入新训练的模型参数
-#ckpt_filename = '../train_model/model.ckpt-30000'  # 注意xxx代表的数字是否和文件夹下的一致
 ckpt_filename = '../train_model/model.ckpt-30000'  # 注意xxx代表的数字是否和文件夹下的一致
+
 # ckpt_filename = '../checkpoints/VGG_VOC0712_SSD_300x300_ft_iter_120000.ckpt'
 isess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
@@ -290,8 +290,9 @@ def process_image(img, select_threshold=0.6, nms_threshold=.01, net_shape=(300, 
 path = '../demo/'
 image_names = sorted(os.listdir(path))
 # 文件夹中的第几张图，-1代表最后一张
-img = mpimg.imread(path + image_names[-1])
-rclasses, rscores, rbboxes = process_image(img)
+for i in range(0,len(image_names)):
+    img = mpimg.imread(path + image_names[i])
+    rclasses, rscores, rbboxes = process_image(img)
 
-# visualization.bboxes_draw_on_img(img, rclasses, rscores, rbboxes, visualization.colors_plasma)
-visualization.plt_bboxes(img, rclasses, rscores, rbboxes)
+    # visualization.bboxes_draw_on_img(img, rclasses, rscores, rbboxes, visualization.colors_plasma)
+    visualization.plt_bboxes(img, rclasses, rscores, rbboxes)
